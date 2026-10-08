@@ -1,0 +1,792 @@
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  background: #1b1b1b;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #1b1b1b;
+  color: #faf7f0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+
+/* =========================================================
+   MAIN PORTFOLIO
+========================================================= */
+
+.portfolio {
+  position: relative;
+  min-height: 100vh;
+
+  background: #1b1b1b;
+
+  color: #faf7f0;
+
+  isolation: isolate;
+
+  overflow-x: clip;
+}
+
+
+/* =========================================================
+   GLOBAL BACKGROUND
+   PREMIUM CHARCOAL / GREY / WARM IVORY
+========================================================= */
+
+.global-background {
+  position: fixed;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+
+  overflow: hidden;
+
+  z-index: 0;
+
+  background:
+    radial-gradient(
+      circle at 52% 18%,
+      rgba(214, 210, 196, 0.08),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 82% 48%,
+      rgba(138, 138, 138, 0.07),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 30% 82%,
+      rgba(214, 210, 196, 0.05),
+      transparent 30%
+    ),
+    #1b1b1b;
+}
+
+
+/* =========================================================
+   GLOBAL GLOW 01
+   REPLACES BLUE
+========================================================= */
+
+.global-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  will-change: transform;
+
+  mix-blend-mode: screen;
+}
+
+
+/* TOP WARM IVORY GLOW */
+
+.global-glow-one {
+  width: 720px;
+  height: 720px;
+
+  top: -300px;
+  left: 35%;
+
+  background:
+    radial-gradient(
+      circle,
+
+      rgba(214, 210, 196, 0.20) 0%,
+
+      rgba(214, 210, 196, 0.11) 24%,
+
+      rgba(138, 138, 138, 0.07) 43%,
+
+      rgba(138, 138, 138, 0.025) 60%,
+
+      transparent 74%
+    );
+
+  filter: blur(95px);
+
+  animation:
+    globalGlowOne 18s ease-in-out infinite;
+}
+
+
+/* RIGHT GREY GLOW */
+
+.global-glow-two {
+  width: 680px;
+  height: 680px;
+
+  top: 22%;
+  right: -300px;
+
+  background:
+    radial-gradient(
+      circle,
+
+      rgba(138, 138, 138, 0.16) 0%,
+
+      rgba(138, 138, 138, 0.09) 27%,
+
+      rgba(214, 210, 196, 0.05) 46%,
+
+      transparent 73%
+    );
+
+  filter: blur(105px);
+
+  animation:
+    globalGlowTwo 22s ease-in-out infinite;
+}
+
+
+/* BOTTOM WARM GLOW */
+
+.global-glow-three {
+  width: 760px;
+  height: 520px;
+
+  left: 18%;
+  bottom: -320px;
+
+  background:
+    radial-gradient(
+      ellipse,
+
+      rgba(214, 210, 196, 0.13) 0%,
+
+      rgba(138, 138, 138, 0.08) 32%,
+
+      rgba(138, 138, 138, 0.035) 52%,
+
+      transparent 75%
+    );
+
+  filter: blur(100px);
+
+  animation:
+    globalGlowThree 20s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   GLOBAL GLOW ANIMATIONS
+========================================================= */
+
+@keyframes globalGlowOne {
+
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate3d(70px, 45px, 0)
+      scale(1.12);
+  }
+}
+
+
+@keyframes globalGlowTwo {
+
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate3d(-75px, 55px, 0)
+      scale(1.10);
+  }
+}
+
+
+@keyframes globalGlowThree {
+
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate3d(60px, -45px, 0)
+      scale(1.15);
+  }
+}
+
+
+/* =========================================================
+   GLOBAL LIGHT BEAM
+========================================================= */
+
+.global-light-beam {
+  position: absolute;
+
+  width: 65%;
+  height: 1px;
+
+  left: 18%;
+  top: 38%;
+
+  background:
+    linear-gradient(
+      90deg,
+
+      transparent 0%,
+
+      rgba(214, 210, 196, 0.04) 20%,
+
+      rgba(214, 210, 196, 0.10) 35%,
+
+      rgba(250, 247, 240, 0.12) 50%,
+
+      rgba(214, 210, 196, 0.08) 65%,
+
+      transparent 100%
+    );
+
+  opacity: 0.35;
+
+  filter: blur(1px);
+
+  transform: rotate(-7deg);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTENT LAYER
+========================================================= */
+
+.portfolio-content {
+  position: relative;
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   TRANSPARENT SECTIONS
+========================================================= */
+
+.hero,
+.intro,
+.skills,
+.projects,
+.visual-campaigns,
+.creative-development,
+.process,
+.contact {
+  background: transparent !important;
+}
+
+
+/* =========================================================
+   COMMON Z-INDEX
+========================================================= */
+
+.hero-content,
+.hero-nav,
+.hero-object,
+.hero-scroll,
+.hero-index,
+.intro-header,
+.intro-main,
+.projects-header,
+.project-feature,
+.projects-bottom {
+  position: relative;
+
+  z-index: 5;
+}
+
+
+/* =========================================================
+   HERO — REMOVE BLUE
+========================================================= */
+
+.hero {
+  background:
+    radial-gradient(
+      circle at 65% 45%,
+      rgba(74, 74, 74, 0.20) 0%,
+      rgba(27, 27, 27, 0.70) 35%,
+      #1b1b1b 75%,
+      #161616 100%
+    ) !important;
+
+  color: #faf7f0 !important;
+}
+
+
+/* HERO GRID */
+
+.hero-grid {
+  background-image:
+    linear-gradient(
+      rgba(214, 210, 196, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(214, 210, 196, 0.035) 1px,
+      transparent 1px
+    ) !important;
+}
+
+
+/* HERO GLOW */
+
+.hero-glow {
+  background:
+    radial-gradient(
+      circle,
+
+      rgba(214, 210, 196, 0.10),
+
+      rgba(138, 138, 138, 0.05) 35%,
+
+      transparent 70%
+    ) !important;
+}
+
+
+/* =========================================================
+   HERO TEXT ACCENT
+========================================================= */
+
+.hero-subtitle span {
+  color: #d6d2c4 !important;
+}
+
+
+/* OUTLINE NAME */
+
+.hero-title span:last-child {
+  -webkit-text-stroke:
+    1px rgba(214, 210, 196, 0.72) !important;
+
+  text-stroke:
+    1px rgba(214, 210, 196, 0.72) !important;
+}
+
+
+/* =========================================================
+   HERO NAV
+========================================================= */
+
+.hero-nav-links a {
+  color: rgba(250, 247, 240, 0.65) !important;
+}
+
+.hero-nav-links a:hover {
+  color: #faf7f0 !important;
+}
+
+.hero-nav-links a::after {
+  background: #d6d2c4 !important;
+}
+
+
+/* =========================================================
+   HERO MENU
+========================================================= */
+
+.hero-menu span {
+  background:
+    rgba(250, 247, 240, 0.70) !important;
+}
+
+
+/* =========================================================
+   SCROLL
+========================================================= */
+
+.scroll-line {
+  background:
+    rgba(250, 247, 240, 0.15) !important;
+}
+
+.scroll-line div {
+  background:
+    #d6d2c4 !important;
+}
+
+
+/* =========================================================
+   SKILLS — REMOVE BLUE / PURPLE
+========================================================= */
+
+.skills {
+  background:
+    radial-gradient(
+      circle at 70% 50%,
+      rgba(138, 138, 138, 0.10),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(74, 74, 74, 0.08),
+      transparent 35%
+    ),
+    #1b1b1b !important;
+}
+
+
+/* SKILLS GLOW ONE */
+
+.skills-glow-one {
+  background:
+    radial-gradient(
+      circle,
+
+      rgba(214, 210, 196, 0.15),
+
+      rgba(214, 210, 196, 0.05) 45%,
+
+      transparent 72%
+    ) !important;
+}
+
+
+/* SKILLS GLOW TWO */
+
+.skills-glow-two {
+  background:
+    radial-gradient(
+      circle,
+
+      rgba(138, 138, 138, 0.12),
+
+      rgba(214, 210, 196, 0.035) 50%,
+
+      transparent 72%
+    ) !important;
+}
+
+
+/* =========================================================
+   SKILL CARDS
+========================================================= */
+
+.skill-card {
+  border-color:
+    rgba(250, 247, 240, 0.12) !important;
+}
+
+
+/* =========================================================
+   VISUAL CAMPAIGNS
+========================================================= */
+
+.visual-campaigns-glow-one,
+.visual-campaigns-glow-two {
+  background:
+    radial-gradient(
+      circle,
+
+      rgba(214, 210, 196, 0.10),
+
+      transparent 70%
+    ) !important;
+}
+
+
+/* =========================================================
+   VISUAL CAMPAIGN ACCENTS
+========================================================= */
+
+.visual-campaigns-description > span,
+.visual-client-heading span,
+.visual-card-overlay span,
+.visual-modal-info small,
+.visual-campaigns-footer-content > span {
+  color:
+    #d6d2c4 !important;
+}
+
+
+/* =========================================================
+   CREATIVE DEVELOPMENT
+========================================================= */
+
+.dev-glow-one,
+.dev-glow-two {
+  background:
+    radial-gradient(
+      circle,
+
+      rgba(214, 210, 196, 0.10),
+
+      transparent 70%
+    ) !important;
+}
+
+
+/* DEVELOPMENT GRID */
+
+.dev-grid {
+  background-image:
+    linear-gradient(
+      rgba(214, 210, 196, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(214, 210, 196, 0.035) 1px,
+      transparent 1px
+    ) !important;
+}
+
+
+/* DEVELOPMENT ACCENTS */
+
+.dev-eyebrow span:first-child,
+.dev-project-top span:first-child,
+.dev-project-arrow strong,
+.dev-final > span,
+.dev-projects-header > div > span,
+.dev-stack-header > span {
+  color:
+    #d6d2c4 !important;
+}
+
+
+/* =========================================================
+   CREATIVE DEVELOPMENT VISUAL
+========================================================= */
+
+.dev-fyp-showcase {
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(214, 210, 196, 0.07),
+      transparent 50%
+    ),
+    rgba(27, 27, 27, 0.75) !important;
+
+  border-color:
+    rgba(250, 247, 240, 0.13) !important;
+
+  box-shadow:
+    0 45px 100px rgba(0, 0, 0, 0.42),
+    inset 0 0 80px rgba(214, 210, 196, 0.025) !important;
+}
+
+
+/* =========================================================
+   STATUS DOT
+========================================================= */
+
+.status-dot {
+  background:
+    #d6d2c4 !important;
+
+  box-shadow:
+    0 0 12px
+    rgba(214, 210, 196, 0.65) !important;
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.process {
+  color: #faf7f0 !important;
+}
+
+
+/* Process accent elements */
+
+.process-line,
+.process-progress,
+.process-node.active,
+.process-orb {
+  --process-accent:
+    #d6d2c4;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+  color: #faf7f0 !important;
+}
+
+
+/* Contact glows */
+
+.contact-glow,
+.contact-orb-glow,
+.contact-gradient {
+  background:
+    radial-gradient(
+      circle,
+      rgba(214, 210, 196, 0.12),
+      rgba(138, 138, 138, 0.05),
+      transparent 70%
+    ) !important;
+}
+
+
+/* =========================================================
+   GENERAL ACCENT OVERRIDES
+========================================================= */
+
+.portfolio [style*="#7186ff"],
+.portfolio [style*="#8c9cff"],
+.portfolio [style*="#536cff"],
+.portfolio [style*="#6478e8"],
+.portfolio [style*="#7186FF"],
+.portfolio [style*="#8C9CFF"],
+.portfolio [style*="#536CFF"],
+.portfolio [style*="#6478E8"] {
+  color: #d6d2c4 !important;
+}
+
+
+/* =========================================================
+   GENERAL BORDERS
+========================================================= */
+
+.visual-campaigns-header-top,
+.dev-eyebrow,
+.dev-project-top,
+.dev-project-arrow,
+.visual-campaigns-footer-line {
+  border-color:
+    rgba(250, 247, 240, 0.12) !important;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.visual-modal-content {
+  background:
+    rgba(27, 27, 27, 0.94) !important;
+
+  border-color:
+    rgba(250, 247, 240, 0.15) !important;
+}
+
+.visual-modal-close {
+  background:
+    rgba(27, 27, 27, 0.82) !important;
+
+  border-color:
+    rgba(250, 247, 240, 0.20) !important;
+}
+
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection {
+  background:
+    #d6d2c4;
+
+  color:
+    #1b1b1b;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background:
+    #1b1b1b;
+}
+
+::-webkit-scrollbar-thumb {
+  background:
+    #4a4a4a;
+
+  border-radius:
+    10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:
+    #8a8a8a;
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.case-study-overlay {
+  z-index: 1000 !important;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .global-glow-one,
+  .global-glow-two,
+  .global-glow-three {
+    animation: none;
+  }
+
+  .scroll-line div {
+    animation: none;
+  }
+}

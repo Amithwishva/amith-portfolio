@@ -1,0 +1,831 @@
+/* =========================================================
+   SCREEN 01 — CINEMATIC WELCOME
+========================================================= */
+
+.loading-screen {
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+
+  z-index: 9999;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(214, 210, 196, 0.045),
+      transparent 28%
+    ),
+    #050507;
+
+  color: #faf7f0;
+
+  isolation: isolate;
+
+  will-change:
+    opacity,
+    transform;
+}
+
+
+/* =========================================================
+   CENTER LIGHT
+========================================================= */
+
+.loading-center-glow {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 420px;
+  height: 420px;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(232, 228, 216, 0.10),
+      rgba(214, 210, 196, 0.035) 35%,
+      transparent 70%
+    );
+
+  filter: blur(55px);
+
+  pointer-events: none;
+
+  z-index: 0;
+
+  will-change:
+    transform,
+    opacity;
+}
+
+
+/* =========================================================
+   ATMOSPHERE
+========================================================= */
+
+.loading-atmosphere {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  mix-blend-mode: screen;
+
+  z-index: 0;
+}
+
+.loading-atmosphere-one {
+  width: 650px;
+  height: 650px;
+
+  top: -390px;
+  left: 28%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(214, 210, 196, 0.09),
+      rgba(214, 210, 196, 0.025) 42%,
+      transparent 72%
+    );
+
+  filter: blur(100px);
+
+  animation:
+    loadingAtmosphereOne
+    18s
+    ease-in-out
+    infinite;
+}
+
+.loading-atmosphere-two {
+  width: 600px;
+  height: 600px;
+
+  right: -320px;
+  bottom: -280px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(214, 210, 196, 0.065),
+      transparent 70%
+    );
+
+  filter: blur(110px);
+
+  animation:
+    loadingAtmosphereTwo
+    21s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   GRAIN
+========================================================= */
+
+.loading-grain {
+  position: absolute;
+
+  inset: -50%;
+
+  z-index: 3;
+
+  pointer-events: none;
+
+  opacity: 0.035;
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.65'/%3E%3C/svg%3E");
+
+  animation:
+    loadingGrain
+    0.4s
+    steps(2)
+    infinite;
+}
+
+
+/* =========================================================
+   TOP LEFT — AW
+========================================================= */
+
+.loading-aw {
+  position: absolute;
+
+  top: 42px;
+  left: 5vw;
+
+  z-index: 10;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 14px;
+
+  font-weight: 400;
+
+  letter-spacing:
+    0.02em;
+
+  color:
+    rgba(
+      232,
+      228,
+      216,
+      0.72
+    );
+
+  will-change:
+    opacity,
+    transform,
+    filter;
+}
+
+
+/* =========================================================
+   TOP RIGHT — INDEX
+========================================================= */
+
+.loading-index {
+  position: absolute;
+
+  top: 44px;
+  right: 5vw;
+
+  z-index: 10;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 7px;
+
+  font-weight: 400;
+
+  letter-spacing:
+    0.24em;
+
+  color:
+    rgba(
+      232,
+      228,
+      216,
+      0.42
+    );
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.loading-main {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  transform:
+    translateY(-1vh);
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   WELCOME
+========================================================= */
+
+.loading-welcome {
+  position: relative;
+
+  z-index: 4;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    clamp(
+      8px,
+      0.7vw,
+      11px
+    );
+
+  font-weight: 400;
+
+  letter-spacing:
+    0.42em;
+
+  color:
+    rgba(
+      232,
+      228,
+      216,
+      0.55
+    );
+
+  white-space: nowrap;
+
+  will-change:
+    opacity,
+    transform,
+    filter;
+}
+
+
+/* =========================================================
+   PORTFOLIO
+========================================================= */
+
+.loading-portfolio {
+  position: relative;
+
+  z-index: 3;
+
+  margin-top: 22px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      76px,
+      12vw,
+      175px
+    );
+
+  font-weight: 400;
+
+  line-height: 0.78;
+
+  letter-spacing:
+    -0.055em;
+
+  color:
+    #e8e4d8;
+
+  white-space: nowrap;
+
+  text-shadow:
+    0 0 45px
+      rgba(
+        232,
+        228,
+        216,
+        0.055
+      );
+
+  will-change:
+    opacity,
+    transform,
+    filter;
+}
+
+
+/* =========================================================
+   LIGHT BEAM
+========================================================= */
+
+.loading-beam {
+  position: absolute;
+
+  top: -24vh;
+
+  left: 50%;
+
+  width: 1px;
+
+  height: 68vh;
+
+  transform:
+    translateX(-50%);
+
+  z-index: 8;
+
+  pointer-events: none;
+
+  will-change:
+    transform,
+    opacity;
+}
+
+.loading-beam-core {
+  position: absolute;
+
+  inset: 0;
+
+  width: 1px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(232, 228, 216, 0.04) 12%,
+      rgba(232, 228, 216, 0.65) 38%,
+      rgba(250, 247, 240, 0.98) 50%,
+      rgba(232, 228, 216, 0.55) 62%,
+      rgba(232, 228, 216, 0.03) 88%,
+      transparent 100%
+    );
+
+  box-shadow:
+    0 0 9px
+      rgba(
+        232,
+        228,
+        216,
+        0.55
+      );
+}
+
+.loading-beam-glow {
+  position: absolute;
+
+  top: 8%;
+  left: 50%;
+
+  width: 80px;
+  height: 84%;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      rgba(214, 210, 196, 0.06) 40%,
+      rgba(232, 228, 216, 0.13) 50%,
+      rgba(214, 210, 196, 0.05) 60%,
+      transparent
+    );
+
+  filter:
+    blur(20px);
+}
+
+
+/* =========================================================
+   DESCRIPTOR
+========================================================= */
+
+.loading-descriptor {
+  position: relative;
+
+  margin-top: 42px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    clamp(
+      7px,
+      0.58vw,
+      9px
+    );
+
+  font-weight: 400;
+
+  letter-spacing:
+    6px;
+
+  color:
+    rgba(
+      232,
+      228,
+      216,
+      0.40
+    );
+
+  white-space: nowrap;
+
+  will-change:
+    opacity,
+    transform,
+    letter-spacing;
+}
+
+
+/* =========================================================
+   YEAR
+========================================================= */
+
+.loading-year {
+  margin-top: 20px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 7px;
+
+  letter-spacing:
+    0.38em;
+
+  color:
+    rgba(
+      232,
+      228,
+      216,
+      0.28
+    );
+
+  will-change:
+    opacity,
+    transform;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.loading-footer {
+  position: absolute;
+
+  left: 5vw;
+  right: 5vw;
+
+  bottom: 5vh;
+
+  z-index: 10;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 6px;
+
+  font-weight: 400;
+
+  letter-spacing:
+    0.23em;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.24
+    );
+
+  will-change:
+    opacity,
+    transform;
+}
+
+.loading-footer-dot {
+  color:
+    rgba(
+      232,
+      228,
+      216,
+      0.45
+    );
+}
+
+.loading-location {
+  margin-left: auto;
+
+  color:
+    rgba(
+      232,
+      228,
+      216,
+      0.30
+    );
+}
+
+
+/* =========================================================
+   ATMOSPHERE ANIMATION
+========================================================= */
+
+@keyframes loadingAtmosphereOne {
+  0%,
+  100% {
+    transform:
+      translate3d(
+        0,
+        0,
+        0
+      )
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate3d(
+        45px,
+        28px,
+        0
+      )
+      scale(1.08);
+  }
+}
+
+@keyframes loadingAtmosphereTwo {
+  0%,
+  100% {
+    transform:
+      translate3d(
+        0,
+        0,
+        0
+      )
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate3d(
+        -40px,
+        -28px,
+        0
+      )
+      scale(1.1);
+  }
+}
+
+
+/* =========================================================
+   GRAIN ANIMATION
+========================================================= */
+
+@keyframes loadingGrain {
+  0% {
+    transform:
+      translate3d(
+        0,
+        0,
+        0
+      );
+  }
+
+  25% {
+    transform:
+      translate3d(
+        -2%,
+        1%,
+        0
+      );
+  }
+
+  50% {
+    transform:
+      translate3d(
+        1%,
+        -2%,
+        0
+      );
+  }
+
+  75% {
+    transform:
+      translate3d(
+        2%,
+        2%,
+        0
+      );
+  }
+
+  100% {
+    transform:
+      translate3d(
+        0,
+        0,
+        0
+      );
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .loading-portfolio {
+    font-size:
+      clamp(
+        65px,
+        13vw,
+        125px
+      );
+  }
+
+  .loading-descriptor {
+    letter-spacing: 4px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+  .loading-aw {
+    top: 27px;
+    left: 24px;
+
+    font-size: 12px;
+  }
+
+  .loading-index {
+    top: 30px;
+    right: 24px;
+
+    font-size: 6px;
+  }
+
+  .loading-welcome {
+    font-size: 7px;
+
+    letter-spacing:
+      0.32em;
+  }
+
+  .loading-portfolio {
+    margin-top: 17px;
+
+    font-size:
+      clamp(
+        50px,
+        15vw,
+        90px
+      );
+
+    letter-spacing:
+      -0.045em;
+  }
+
+  .loading-descriptor {
+    margin-top: 30px;
+
+    font-size: 5.5px;
+
+    letter-spacing:
+      3px;
+  }
+
+  .loading-year {
+    margin-top: 16px;
+
+    font-size: 6px;
+  }
+
+  .loading-footer {
+    left: 24px;
+    right: 24px;
+
+    bottom: 26px;
+
+    font-size: 5px;
+
+    letter-spacing:
+      0.17em;
+  }
+
+  .loading-location {
+    display: none;
+  }
+
+  .loading-beam {
+    height: 58vh;
+  }
+
+  .loading-center-glow {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .loading-portfolio {
+    font-size: 49px;
+  }
+
+  .loading-welcome {
+    font-size: 6px;
+
+    letter-spacing:
+      0.25em;
+  }
+
+  .loading-descriptor {
+    font-size: 5px;
+
+    letter-spacing:
+      2.2px;
+  }
+
+  .loading-footer {
+    gap: 7px;
+
+    font-size: 4.5px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .loading-atmosphere-one,
+  .loading-atmosphere-two,
+  .loading-grain {
+    animation: none;
+  }
+}

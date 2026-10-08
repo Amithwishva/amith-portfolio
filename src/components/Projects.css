@@ -1,0 +1,1344 @@
+/* =========================================================
+   SCREEN 04 — PROJECTS
+========================================================= */
+
+.projects {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  overflow: hidden;
+  color: #ffffff;
+  perspective: 1500px;
+
+  background:
+    radial-gradient(
+      circle at 25% 45%,
+      rgba(214, 210, 196, 0.055),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(214, 210, 196, 0.055),
+      transparent 35%
+    );
+
+  isolation: isolate;
+}
+
+/* =========================================================
+   ATMOSPHERE
+========================================================= */
+
+.projects-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(100px);
+  mix-blend-mode: screen;
+  z-index: 0;
+}
+
+.projects-glow-one {
+  width: 600px;
+  height: 600px;
+  left: -220px;
+  top: 15%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(214, 210, 196, 0.18),
+      rgba(214, 210, 196, 0.05) 45%,
+      transparent 72%
+    );
+}
+
+.projects-glow-two {
+  width: 500px;
+  height: 500px;
+  right: -180px;
+  bottom: -100px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(214, 210, 196, 0.18),
+      rgba(214, 210, 196, 0.05) 48%,
+      transparent 72%
+    );
+}
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.projects-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.20;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    90px 90px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 20%,
+      black 78%,
+      transparent
+    );
+
+  z-index: 1;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.projects-header {
+  position: relative;
+  z-index: 30;
+  height: 118px;
+  padding:
+    0 5.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.055);
+}
+
+.projects-header-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.projects-index {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  color:
+    rgba(255, 255, 255, 0.27);
+}
+
+.projects-label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  color:
+    rgba(255, 255, 255, 0.68);
+}
+
+.projects-header-right {
+  font-size: 8px;
+  letter-spacing: 0.22em;
+  color:
+    rgba(255, 255, 255, 0.28);
+}
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.projects-main {
+  position: relative;
+  z-index: 10;
+  min-height:
+    calc(100vh - 118px);
+  padding:
+    5vh 5.5vw 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5vw;
+  transform-style: preserve-3d;
+}
+
+/* =========================================================
+   VISUAL
+========================================================= */
+
+.projects-visual {
+  position: relative;
+  width: min(54vw, 760px);
+  height: min(58vh, 570px);
+  min-height: 430px;
+  transform-style: preserve-3d;
+  will-change: transform;
+  z-index: 5;
+}
+
+/* =========================================================
+   VISUAL GLOW
+========================================================= */
+
+.projects-visual-glow {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  left: 50%;
+  top: 50%;
+  transform:
+    translate(-50%, -50%);
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(214, 210, 196, 0.17),
+      rgba(214, 210, 196, 0.06) 45%,
+      transparent 72%
+    );
+
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+/* =========================================================
+   IMAGE FRAME
+========================================================= */
+
+.projects-image-frame {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.16);
+
+  background:
+    rgba(255, 255, 255, 0.025);
+
+  box-shadow:
+    0 45px 110px
+      rgba(0, 0, 0, 0.58),
+
+    0 15px 45px
+      rgba(0, 0, 0, 0.28),
+
+    0 0 70px
+      rgba(214, 210, 196, 0.07),
+
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.16);
+
+  transform-style: preserve-3d;
+  z-index: 5;
+}
+
+/* =========================================================
+   PROJECT IMAGE
+========================================================= */
+
+.projects-image {
+  position: absolute;
+  inset: -3%;
+  width: 106%;
+  height: 106%;
+  object-fit: cover;
+  display: block;
+  will-change: transform;
+  transform:
+    translateZ(20px);
+
+  filter:
+    saturate(0.96)
+    contrast(1.02);
+
+  transition:
+    filter 0.6s ease;
+}
+
+.projects-visual:hover
+.projects-image {
+  filter:
+    saturate(1.04)
+    contrast(1.04);
+}
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.projects-image-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(40, 39, 35, 0.10),
+      transparent 35%,
+      transparent 65%,
+      rgba(214, 210, 196, 0.12)
+    );
+
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* =========================================================
+   IMAGE SCAN
+========================================================= */
+
+.projects-image-scan {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -30%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(232, 228, 216, 0.35),
+      transparent
+    );
+
+  box-shadow:
+    0 0 18px
+      rgba(214, 210, 196, 0.2);
+
+  opacity: 0.65;
+
+  animation:
+    projectScan
+    5s
+    ease-in-out
+    infinite;
+
+  pointer-events: none;
+  z-index: 15;
+}
+
+@keyframes projectScan {
+  0% {
+    transform:
+      translateY(-50px);
+  }
+
+  45% {
+    transform:
+      translateY(700px);
+  }
+
+  100% {
+    transform:
+      translateY(700px);
+  }
+}
+
+/* =========================================================
+   IMAGE CORNERS
+========================================================= */
+
+.projects-corner {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.projects-corner::before,
+.projects-corner::after {
+  content: "";
+  position: absolute;
+  background:
+    rgba(232, 228, 216, 0.75);
+}
+
+.projects-corner::before {
+  width: 100%;
+  height: 1px;
+}
+
+.projects-corner::after {
+  width: 1px;
+  height: 100%;
+}
+
+.projects-corner-tl {
+  left: 16px;
+  top: 16px;
+}
+
+.projects-corner-tr {
+  right: 16px;
+  top: 16px;
+  transform:
+    rotate(90deg);
+}
+
+.projects-corner-bl {
+  left: 16px;
+  bottom: 16px;
+  transform:
+    rotate(-90deg);
+}
+
+.projects-corner-br {
+  right: 16px;
+  bottom: 16px;
+  transform:
+    rotate(180deg);
+}
+
+/* =========================================================
+   IMAGE META
+========================================================= */
+
+.projects-image-meta {
+  position: absolute;
+  left: 22px;
+  bottom: 20px;
+  z-index: 30;
+  display: flex;
+  gap: 12px;
+  font-size: 8px;
+  letter-spacing: 0.20em;
+  color:
+    rgba(255, 255, 255, 0.68);
+  mix-blend-mode: difference;
+}
+
+.projects-image-meta span + span {
+  color:
+    rgba(255, 255, 255, 0.40);
+}
+
+/* =========================================================
+   VISUAL LABEL
+========================================================= */
+
+.projects-visual-label {
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  transform:
+    translateX(100%)
+    rotate(90deg);
+  transform-origin:
+    left center;
+  font-size: 7px;
+  letter-spacing: 0.30em;
+  color:
+    rgba(255, 255, 255, 0.20);
+  white-space: nowrap;
+}
+
+/* =========================================================
+   INFORMATION PANEL
+========================================================= */
+
+.projects-info {
+  position: relative;
+  width: min(31vw, 450px);
+  min-width: 360px;
+  min-height: 500px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.14);
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.09),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  backdrop-filter:
+    blur(28px)
+    saturate(140%);
+
+  -webkit-backdrop-filter:
+    blur(28px)
+    saturate(140%);
+
+  box-shadow:
+    0 45px 100px
+      rgba(0, 0, 0, 0.58),
+
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.16),
+
+    inset 0 -1px 0
+      rgba(255, 255, 255, 0.025);
+
+  transform:
+    translateZ(40px);
+
+  z-index: 15;
+}
+
+/* =========================================================
+   INFO TOP
+========================================================= */
+
+.projects-info-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.09);
+}
+
+.projects-big-number {
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  color:
+    rgba(255, 255, 255, 0.38);
+}
+
+.projects-year {
+  font-size: 8px;
+  letter-spacing: 0.20em;
+  color:
+    rgba(255, 255, 255, 0.25);
+}
+
+/* =========================================================
+   INFO CONTENT
+========================================================= */
+
+.projects-info-content {
+  padding-top: 30px;
+}
+
+.projects-category {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  font-size: 7px;
+  line-height: 1.6;
+  letter-spacing: 0.20em;
+  color:
+    rgba(214, 210, 196, 0.72);
+  text-transform: uppercase;
+}
+
+.projects-category span {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background:
+    rgba(214, 210, 196, 0.55);
+}
+
+.projects-title {
+  margin: 22px 0 0;
+  font-size:
+    clamp(50px, 4.3vw, 70px);
+  line-height: 0.9;
+  font-weight: 700;
+  letter-spacing: -0.065em;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.projects-description {
+  margin: 27px 0 0;
+  max-width: 360px;
+  font-size: 12px;
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+  color:
+    rgba(255, 255, 255, 0.50);
+}
+
+/* =========================================================
+   TAGS
+========================================================= */
+
+.projects-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 25px;
+}
+
+.projects-tags span {
+  padding:
+    7px 10px;
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.09);
+  border-radius: 100px;
+  background:
+    rgba(255, 255, 255, 0.025);
+  font-size: 6px;
+  letter-spacing: 0.15em;
+  color:
+    rgba(255, 255, 255, 0.36);
+}
+
+/* =========================================================
+   INFO BOTTOM
+========================================================= */
+
+.projects-info-bottom {
+  margin-top: auto;
+  padding-top: 22px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.09);
+}
+
+.projects-tool {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.projects-tool span {
+  font-size: 6px;
+  letter-spacing: 0.20em;
+  color:
+    rgba(255, 255, 255, 0.25);
+}
+
+.projects-tool strong {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color:
+    rgba(255, 255, 255, 0.68);
+}
+
+/* =========================================================
+   CASE STUDY BUTTON
+========================================================= */
+
+.projects-case-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color:
+    rgba(255, 255, 255, 0.70);
+  cursor: pointer;
+  font-size: 7px;
+  letter-spacing: 0.20em;
+  transition:
+    color 0.35s ease;
+}
+
+.projects-case-button:hover {
+  color: #ffffff;
+}
+
+.projects-case-arrow {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.16);
+  border-radius: 50%;
+  background:
+    rgba(255, 255, 255, 0.035);
+  font-size: 14px;
+
+  transition:
+    transform 0.45s ease,
+    background 0.45s ease,
+    border-color 0.45s ease;
+}
+
+.projects-case-button:hover
+.projects-case-arrow {
+  transform:
+    rotate(45deg);
+
+  background:
+    rgba(214, 210, 196, 0.14);
+
+  border-color:
+    rgba(232, 228, 216, 0.38);
+}
+
+/* =========================================================
+   PROJECT NAVIGATION
+========================================================= */
+
+.projects-navigation {
+  position: absolute;
+  left: 5.5vw;
+  right: 5.5vw;
+  bottom: 65px;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.projects-nav-line {
+  flex: 1;
+  height: 1px;
+  background:
+    rgba(255, 255, 255, 0.07);
+}
+
+.projects-nav-items {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.projects-nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 10px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color:
+    rgba(255, 255, 255, 0.25);
+  transition:
+    color 0.4s ease;
+}
+
+.projects-nav-number {
+  font-size: 7px;
+  letter-spacing: 0.18em;
+}
+
+.projects-nav-name {
+  font-size: 7px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.projects-nav-item::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 1px;
+  height: 1px;
+  background:
+    rgba(214, 210, 196, 0.75);
+  transform:
+    scaleX(0);
+  transform-origin: left;
+  transition:
+    transform 0.45s ease;
+}
+
+.projects-nav-item:hover {
+  color:
+    rgba(255, 255, 255, 0.60);
+}
+
+.projects-nav-item.active {
+  color: #ffffff;
+}
+
+.projects-nav-item.active::after {
+  transform:
+    scaleX(1);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.projects-footer {
+  position: absolute;
+  left: 5.5vw;
+  right: 5.5vw;
+  bottom: 24px;
+  z-index: 40;
+  display: flex;
+  justify-content: space-between;
+  font-size: 6px;
+  letter-spacing: 0.25em;
+  color:
+    rgba(255, 255, 255, 0.20);
+}
+
+/* =========================================================
+   CASE STUDY OVERLAY
+========================================================= */
+
+.case-study-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4vh 5vw;
+  overflow: auto;
+}
+
+.case-study-backdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    rgba(3, 3, 8, 0.86);
+  backdrop-filter:
+    blur(22px);
+  -webkit-backdrop-filter:
+    blur(22px);
+}
+
+/* =========================================================
+   CASE STUDY PANEL
+========================================================= */
+
+.case-study-panel {
+  position: relative;
+  width: min(1180px, 92vw);
+  max-height: 90vh;
+  overflow: auto;
+  padding: 28px;
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.13);
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.09),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  box-shadow:
+    0 60px 150px
+      rgba(0, 0, 0, 0.72),
+
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.15);
+
+  backdrop-filter:
+    blur(28px)
+    saturate(130%);
+
+  -webkit-backdrop-filter:
+    blur(28px)
+    saturate(130%);
+
+  z-index: 2;
+}
+
+/* =========================================================
+   CASE HEADER
+========================================================= */
+
+.case-study-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 22px;
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+}
+
+.case-study-header > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.case-study-index {
+  font-size: 8px;
+  letter-spacing: 0.22em;
+  color:
+    rgba(255, 255, 255, 0.38);
+}
+
+.case-study-year {
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  color:
+    rgba(255, 255, 255, 0.20);
+}
+
+.case-study-close {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+  background:
+    rgba(255, 255, 255, 0.035);
+  color:
+    rgba(255, 255, 255, 0.75);
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease;
+}
+
+.case-study-close:hover {
+  transform:
+    rotate(90deg);
+
+  background:
+    rgba(255, 255, 255, 0.09);
+}
+
+/* =========================================================
+   CASE CONTENT
+========================================================= */
+
+.case-study-content {
+  display: grid;
+  grid-template-columns:
+    1.15fr
+    0.85fr;
+  gap: 50px;
+  padding:
+    40px 0;
+}
+
+.case-study-image {
+  position: relative;
+  min-height: 480px;
+  overflow: hidden;
+  border-radius: 10px;
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+  background:
+    rgba(255, 255, 255, 0.025);
+}
+
+.case-study-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(214, 210, 196, 0.08),
+      transparent 45%,
+      rgba(214, 210, 196, 0.08)
+    );
+
+  pointer-events: none;
+}
+
+.case-study-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  display: block;
+  object-fit: cover;
+}
+
+/* =========================================================
+   CASE COPY
+========================================================= */
+
+.case-study-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.case-study-label {
+  font-size: 7px;
+  letter-spacing: 0.22em;
+  color:
+    rgba(214, 210, 196, 0.75);
+  text-transform: uppercase;
+}
+
+.case-study-copy h2 {
+  margin: 22px 0 0;
+  font-size:
+    clamp(42px, 4vw, 68px);
+  line-height: 0.94;
+  letter-spacing: -0.065em;
+  font-weight: 700;
+}
+
+.case-study-copy p {
+  margin: 28px 0 0;
+  max-width: 470px;
+  font-size: 13px;
+  line-height: 1.8;
+  color:
+    rgba(255, 255, 255, 0.48);
+}
+
+/* =========================================================
+   CASE DETAILS
+========================================================= */
+
+.case-study-details {
+  margin-top: 38px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.case-study-detail {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding:
+    13px 0;
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+}
+
+.case-study-detail span {
+  font-size: 7px;
+  letter-spacing: 0.15em;
+  color:
+    rgba(255, 255, 255, 0.22);
+}
+
+.case-study-detail strong {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color:
+    rgba(255, 255, 255, 0.62);
+}
+
+/* =========================================================
+   CASE FOOTER
+========================================================= */
+
+.case-study-footer {
+  padding-top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+}
+
+.case-study-footer span {
+  font-size: 7px;
+  letter-spacing: 0.22em;
+  color:
+    rgba(255, 255, 255, 0.25);
+}
+
+.case-study-footer button {
+  border: 0;
+  background: transparent;
+  color:
+    rgba(255, 255, 255, 0.55);
+  font-size: 7px;
+  letter-spacing: 0.18em;
+  cursor: pointer;
+
+  transition:
+    color 0.3s ease;
+}
+
+.case-study-footer button:hover {
+  color: #ffffff;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .projects-header {
+    padding:
+      0 40px;
+  }
+
+  .projects-main {
+    padding:
+      5vh 40px 105px;
+    gap: 30px;
+  }
+
+  .projects-visual {
+    width: 54vw;
+    height: 520px;
+  }
+
+  .projects-info {
+    min-width: 340px;
+    padding: 25px;
+  }
+
+  .projects-navigation,
+  .projects-footer {
+    left: 40px;
+    right: 40px;
+  }
+
+  .projects-nav-name {
+    display: none;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+  .projects {
+    min-height: 100svh;
+  }
+
+  .projects-header {
+    height: 90px;
+    padding:
+      0 24px;
+  }
+
+  .projects-header-left {
+    gap: 18px;
+  }
+
+  .projects-label {
+    font-size: 9px;
+    letter-spacing: 0.20em;
+  }
+
+  .projects-header-right {
+    display: none;
+  }
+
+  .projects-main {
+    min-height:
+      calc(100svh - 90px);
+    padding:
+      50px 24px 145px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    align-items: stretch;
+  }
+
+  .projects-visual {
+    width: 100%;
+    height: 48vw;
+    min-height: 250px;
+    max-height: 390px;
+  }
+
+  .projects-visual-label {
+    display: none;
+  }
+
+  .projects-info {
+    width: 100%;
+    min-width: 0;
+    min-height: 390px;
+    padding: 22px;
+  }
+
+  .projects-title {
+    font-size:
+      clamp(44px, 13vw, 65px);
+  }
+
+  .projects-description {
+    font-size: 11px;
+    margin-top: 20px;
+  }
+
+  .projects-tags {
+    margin-top: 18px;
+  }
+
+  .projects-navigation {
+    left: 24px;
+    right: 24px;
+    bottom: 65px;
+    gap: 12px;
+  }
+
+  .projects-nav-line {
+    display: none;
+  }
+
+  .projects-nav-items {
+    width: 100%;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .projects-nav-item {
+    padding:
+      7px 9px;
+  }
+
+  .projects-nav-name {
+    display: none;
+  }
+
+  .projects-footer {
+    left: 24px;
+    right: 24px;
+    bottom: 24px;
+  }
+
+  /* Case study */
+
+  .case-study-overlay {
+    padding:
+      20px 15px;
+  }
+
+  .case-study-panel {
+    width: 100%;
+    max-height: 94vh;
+    padding: 20px;
+  }
+
+  .case-study-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding:
+      28px 0;
+  }
+
+  .case-study-image {
+    min-height: 280px;
+  }
+
+  .case-study-image img {
+    min-height: 280px;
+  }
+
+  .case-study-copy h2 {
+    font-size: 42px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .projects-header {
+    padding:
+      0 18px;
+  }
+
+  .projects-index {
+    display: none;
+  }
+
+  .projects-main {
+    padding:
+      35px 18px 140px;
+  }
+
+  .projects-visual {
+    min-height: 220px;
+  }
+
+  .projects-info {
+    min-height: 370px;
+    padding: 20px;
+  }
+
+  .projects-category {
+    font-size: 6px;
+  }
+
+  .projects-title {
+    font-size: 43px;
+  }
+
+  .projects-description {
+    font-size: 10px;
+  }
+
+  .projects-nav-item {
+    padding:
+      7px 8px;
+  }
+
+  .projects-footer {
+    left: 18px;
+    right: 18px;
+  }
+
+  .case-study-panel {
+    padding: 17px;
+  }
+
+  .case-study-copy h2 {
+    font-size: 38px;
+  }
+
+  .case-study-copy p {
+    font-size: 11px;
+  }
+
+  .case-study-close {
+    width: 36px;
+    height: 36px;
+    font-size: 21px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .projects-image-scan {
+    animation: none;
+  }
+
+  .projects-visual,
+  .projects-image,
+  .projects-case-arrow,
+  .case-study-close {
+    transition: none;
+  }
+}
